@@ -1,10 +1,3 @@
-[submodule "dev"]
-	path = dev
-	url = git@github.com:botobo-team/dev.git
-	branch = master
-	
-[submodule "dev"]
-	path = dev
-	url = https://github.com/botobo-team/dev.git
-	branch = master
-
+[submodule "botobo-dev"]
+	path = botobo-dev
+	url = https://github.com/ggyool/botobo-dev.git
