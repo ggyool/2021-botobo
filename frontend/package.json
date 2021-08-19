@@ -4,9 +4,8 @@
   "author": "Team Botobo",
   "license": "MIT",
   "scripts": {
-    "start": "cp ../dev/env/.env.local ./.env && webpack serve --node-env development --config webpack.dev.js",
-    "build:dev": "cp ../dev/env/.env.dev ./.env && webpack --node-env production --config webpack.prod.js",
-    "build:prod": "cp ../dev/env/.env.prod ./.env && webpack --node-env production --config webpack.prod.js",
+    "start": "cp ../botobo-dev/env/.env.local ./.env && webpack serve --node-env development --config webpack.dev.js",
+    "build:dev": "cp ../botobo-dev/env/.env.dev ./.env && webpack --node-env production --config webpack.prod.js",
     "test": "jest"
   },
   "dependencies": {

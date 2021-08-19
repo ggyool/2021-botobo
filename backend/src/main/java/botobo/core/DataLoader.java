@@ -28,10 +28,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-@Component
+//@Component
 @Slf4j
-@Profile("local")
-@Transactional
+//@Profile("local")
+//@Transactional
 public class DataLoader implements CommandLineRunner {
 
     @Value("${dummy.file-path}")

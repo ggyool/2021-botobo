@@ -36,15 +36,16 @@ public class UserController {
         return ResponseEntity.ok(userResponse);
     }
 
-    @PostMapping(value = "/profile")
-    public ResponseEntity<ProfileResponse> updateProfileImage(
-            @RequestParam(value = "profile", required = false) MultipartFile multipartFile,
-            @AuthenticationPrincipal AppUser appUser
-    )
-            throws IOException {
-        ProfileResponse profileResponse = userService.updateProfile(multipartFile, appUser);
-        return ResponseEntity.ok(profileResponse);
-    }
+    // TODO : 임시
+//    @PostMapping(value = "/profile")
+//    public ResponseEntity<ProfileResponse> updateProfileImage(
+//            @RequestParam(value = "profile", required = false) MultipartFile multipartFile,
+//            @AuthenticationPrincipal AppUser appUser
+//    )
+//            throws IOException {
+//        ProfileResponse profileResponse = userService.updateProfile(multipartFile, appUser);
+//        return ResponseEntity.ok(profileResponse);
+//    }
 
     @PutMapping("/me")
     public ResponseEntity<UserResponse> update(@Valid @RequestBody UserUpdateRequest userUpdateRequest,

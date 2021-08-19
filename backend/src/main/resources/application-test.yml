@@ -13,15 +13,15 @@ spring:
   config:
     activate:
       on-profile: test
-  flyway:
-    enabled: false
+#  flyway:
+#    enabled: false
 
-logging:
-  level:
-    com:
-      amazonaws:
-        util:
-          EC2MetadataUtils: error
+#logging:
+#  level:
+#    com:
+#      amazonaws:
+#        util:
+#          EC2MetadataUtils: error
 
 github:
   client:
@@ -47,16 +47,16 @@ security:
       secret-key: testsecretkey
       expire-length: 3600000
 
-aws:
-  cloudfront:
-    url-format: https://d1mlkr1uzdb8as.cloudfront.net/%s
-  s3:
-    bucket: s3-botobo-storage
-  user-default-image: botobo-default-profile.png
-
-cloud:
-  aws:
-    region:
-      static: ap-northeast-2
-    stack:
-      auto: false
+#aws:
+#  cloudfront:
+#    url-format: https://d1mlkr1uzdb8as.cloudfront.net/%s
+#  s3:
+#    bucket: s3-botobo-storage
+#  user-default-image: botobo-default-profile.png
+#
+#cloud:
+#  aws:
+#    region:
+#      static: ap-northeast-2
+#    stack:
+#      auto: false

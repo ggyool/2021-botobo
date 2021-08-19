@@ -19,11 +19,12 @@ import java.io.IOException;
 @Transactional(readOnly = true)
 public class UserService extends AbstractUserService {
 
-    private final S3Uploader s3Uploader;
+    // TODO : 임시
+//    private final S3Uploader s3Uploader;
 
-    public UserService(UserRepository userRepository, S3Uploader s3Uploader) {
+
+    public UserService(UserRepository userRepository) {
         super(userRepository);
-        this.s3Uploader = s3Uploader;
     }
 
     public UserResponse findById(AppUser appUser) {
@@ -38,19 +39,20 @@ public class UserService extends AbstractUserService {
         return UserResponse.of(user);
     }
 
-    @Transactional
-    public ProfileResponse updateProfile(MultipartFile multipartFile, AppUser appUser) throws IOException {
-        User user = findUser(appUser);
-        String oldProfileUrl = user.getProfileUrl();
-        String newProfileUrl = s3Uploader.upload(multipartFile, user.getUserName());
-
-        user.updateProfileUrl(newProfileUrl);
-
-        s3Uploader.deleteFromS3(oldProfileUrl);
-        return ProfileResponse.builder()
-                .profileUrl(newProfileUrl)
-                .build();
-    }
+    // TODO : 임시
+//    @Transactional
+//    public ProfileResponse updateProfile(MultipartFile multipartFile, AppUser appUser) throws IOException {
+//        User user = findUser(appUser);
+//        String oldProfileUrl = user.getProfileUrl();
+//        String newProfileUrl = s3Uploader.upload(multipartFile, user.getUserName());
+//
+//        user.updateProfileUrl(newProfileUrl);
+//
+//        s3Uploader.deleteFromS3(oldProfileUrl);
+//        return ProfileResponse.builder()
+//                .profileUrl(newProfileUrl)
+//                .build();
+//    }
 
     public void checkDuplicatedUserName(UserNameRequest userNameRequest, AppUser appUser) {
         validateDuplicatedUserName(userNameRequest.getUserName(), appUser);

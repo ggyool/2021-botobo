@@ -1,12 +1,11 @@
 package botobo.core.utils;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItem;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.tomcat.util.http.fileupload.FileItem;
+import org.apache.tomcat.util.http.fileupload.disk.DiskFileItem;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
-import org.testcontainers.shaded.org.apache.commons.io.IOUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -48,23 +47,24 @@ public class FileFactory {
         }
     }
 
-    public static MultipartFile uploadFile(File file, String fileName) throws IOException {
-        return createMultipartFile(file, fileName);
-    }
+//    public static MultipartFile uploadFile(File file, String fileName) throws IOException {
+//        return createMultipartFile(file, fileName);
+//    }
 
-    private static MultipartFile createMultipartFile(File file, String fileName) throws IOException {
-        FileItem fileItem = new DiskFileItem(
-                fileName,
-                Files.probeContentType(file.toPath()),
-                false,
-                file.getName(),
-                (int) file.length(),
-                file.getParentFile()
-        );
-
-        InputStream input = new FileInputStream(file);
-        OutputStream os = fileItem.getOutputStream();
-        IOUtils.copy(input, os);
-        return new CommonsMultipartFile(fileItem);
-    }
+    // TODO : 임시
+//    private static MultipartFile createMultipartFile(File file, String fileName) throws IOException {
+//        FileItem fileItem = new DiskFileItem(
+//                fileName,
+//                Files.probeContentType(file.toPath()),
+//                false,
+//                file.getName(),
+//                (int) file.length(),
+//                file.getParentFile()
+//        );
+//
+//        InputStream input = new FileInputStream(file);
+//        OutputStream os = fileItem.getOutputStream();
+//        IOUtils.copy(input, os);
+//        return new CommonsMultipartFile(fileItem);
+//    }
 }
