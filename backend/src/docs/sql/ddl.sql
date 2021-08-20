@@ -25,8 +25,8 @@ CREATE TABLE workbook(
 
 CREATE TABLE card(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    question BLOB NOT NULL,
-    answer BLOB NOT NULL,
+    question LONGTEXT NOT NULL,
+    answer LONGTEXT NOT NULL,
     encounter_count INT NOT NULL,
     bookmark TINYINT(1) not null,
     next_quiz TINYINT(1) not null,
