@@ -28,6 +28,7 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured:3.3.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     runtimeOnly 'com.h2database:h2'
+    testImplementation 'io.rest-assured:xml-path:4.2.0'
 
     // lombok
     implementation 'org.projectlombok:lombok'
@@ -171,5 +172,5 @@ task createDocument(type: Copy) {
 }
 
 build {
-    dependsOn createDocument
+//    dependsOn createDocument
 }
